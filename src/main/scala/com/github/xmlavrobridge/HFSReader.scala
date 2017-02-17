@@ -17,7 +17,7 @@ trait HFSReader {
     }.toList
   }
 
-  def openFileDemo(s: String) = {
+  def openFile(s: String) = {
     val conf = new Configuration()
     conf.set("fs.hdfs.impl", "org.apache.hadoop.hdfs.DistributedFileSystem")
 

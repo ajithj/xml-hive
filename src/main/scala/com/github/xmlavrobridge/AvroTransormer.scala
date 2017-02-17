@@ -26,7 +26,7 @@ object AvroTransormer extends HFSReader {
   def avroTransformer(path: Path, conf: Configuration): AvroTransormer = {
     conf.set("fs.hdfs.impl", "org.apache.hadoop.hdfs.DistributedFileSystem")
     val schemaConverter = new XSDToAvroSchemaConverter() {
-      override val readFile: (String) => InputStream = openFileDemo
+      override val readFile: (String) => InputStream = openFile
       override val listDirectory: (String) => List[String] = listFiles
     }
 
@@ -39,7 +39,7 @@ object AvroTransormer extends HFSReader {
 
     val schema = new Schema.Parser().parse(new ReaderInputStream(new StringReader(schemaStr)))
 
-    new AvroTransormer(openFileDemo(path.toString), conf, schema)
+    new AvroTransormer(openFile(path.toString), conf, schema)
   }
 
 

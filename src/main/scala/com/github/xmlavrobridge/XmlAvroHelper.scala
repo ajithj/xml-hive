@@ -90,7 +90,7 @@ object XmlAvroHelper extends HFSReader {
     val fs = FileSystem.get(conf)
 
     val schemaConverter = new XSDToAvroSchemaConverter() {
-      override val readFile: (String) => InputStream = openFileDemo
+      override val readFile: (String) => InputStream = openFile
       override val listDirectory: (String) => List[String] = listFiles
     }
 
