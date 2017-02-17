@@ -1,0 +1,18 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://schemas.sun.com/point/venetianblind"
+    xmlns:tns="http://schemas.sun.com/point/venetianblind"
+    xmlns="http://schemas.sun.com/point/venetianblind"
+    elementFormDefault="qualified">
+    <xsd:element name="Members">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Member" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:attribute name="FirstName" type="xsd:string"/>
+                        <xsd:attribute name="LastName" type="xsd:string"/>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
